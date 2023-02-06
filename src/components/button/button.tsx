@@ -9,9 +9,6 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   children,
-  width,
-  height,
-  color,
   ...props
 }) => {
   return <ButtonContainer {...props}>{children}</ButtonContainer>;
