@@ -1,6 +1,7 @@
 {
   "name": "spa-login",
   "version": "0.1.0",
+  "homepage": "https://chris25345.github.io/react-login",
   "private": true,
   "dependencies": {
     "@hookform/resolvers": "^2.9.10",
@@ -25,6 +26,8 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -49,6 +52,7 @@
     ]
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.26"
+    "@types/styled-components": "^5.1.26",
+    "gh-pages": "^5.0.0"
   }
 }
