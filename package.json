@@ -1,7 +1,7 @@
 {
   "name": "spa-login",
   "version": "0.1.0",
-  "homepage": "https://chris25345.github.io/app/",
+  "homepage": "https://chris25345.github.io/react-login",
   "private": true,
   "dependencies": {
     "@hookform/resolvers": "^2.9.10",

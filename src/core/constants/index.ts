@@ -6,8 +6,8 @@ export const INITIAL_VALUES: ILoginFormData = {
 };
 
 export const APP_ROUTES = {
-  account: "/app/account",
-  main: "/app",
+  account: "/react-login/account",
+  main: "/react-login",
 };
 
 export const LS_KEY = "form-data";
