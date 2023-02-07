@@ -6,8 +6,8 @@ export const INITIAL_VALUES: ILoginFormData = {
 };
 
 export const APP_ROUTES = {
-  account: "/account",
-  main: "/",
+  account: "/app/account",
+  main: "/app",
 };
 
 export const LS_KEY = "form-data";
