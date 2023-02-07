@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, ButtonHTMLAttributes } from "react";
+import { FC, PropsWithChildren, ButtonHTMLAttributes, memo } from "react";
 import { ButtonContainer } from "./styled";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -8,9 +8,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   radius?: number;
 }
 
-export const Button: FC<PropsWithChildren<ButtonProps>> = ({
-  children,
-  ...props
-}) => {
-  return <ButtonContainer {...props}>{children}</ButtonContainer>;
-};
+export const Button: FC<PropsWithChildren<ButtonProps>> = memo(
+  ({ children, ...props }) => {
+    return <ButtonContainer {...props}>{children}</ButtonContainer>;
+  }
+);

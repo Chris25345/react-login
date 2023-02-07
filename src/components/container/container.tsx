@@ -1,19 +1,18 @@
-import { FC, PropsWithChildren, ReactNode } from "react";
+import { FC, memo, PropsWithChildren, ReactNode } from "react";
 import { Navigation } from "../navigation";
 import { Content, MainContainer } from "./styled";
 
 interface ContainerProps {
-  button: ReactNode;
+  button?: ReactNode;
 }
 
-export const Container: FC<PropsWithChildren<ContainerProps>> = ({
-  children,
-  button,
-}) => {
-  return (
-    <MainContainer>
-      <Navigation button={button} />
-      <Content>{children}</Content>
-    </MainContainer>
-  );
-};
+export const Container: FC<PropsWithChildren<ContainerProps>> = memo(
+  ({ children, button }) => {
+    return (
+      <MainContainer>
+        <Navigation button={button} />
+        <Content>{children}</Content>
+      </MainContainer>
+    );
+  }
+);

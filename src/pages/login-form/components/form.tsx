@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { Button } from "../../../components";
 import { setFormData } from "../../../core/utils/local-storage";
 import { Header, InputBox, Label, StyledForm, StyledInput } from "../styled";
@@ -7,6 +8,7 @@ import { ILoginFormData } from "../types";
 
 export const Form: FC = () => {
   const [disabled, setDisabled] = useState<boolean>(false);
+  const navigate = useNavigate();
   const { register, handleSubmit } = useForm<ILoginFormData>({
     defaultValues: {
       email: "",
@@ -18,7 +20,10 @@ export const Form: FC = () => {
     setDisabled(true);
     setFormData(data);
 
-    setTimeout(() => setDisabled(false), 1500);
+    setTimeout(() => {
+      setDisabled(false);
+      navigate("/account");
+    }, 1500);
   };
 
   return (

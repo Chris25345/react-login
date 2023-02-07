@@ -1,10 +1,15 @@
 import styled from "styled-components";
 import { BasicTypography } from "../../../core/styled";
 
-export const NavigationBox = styled.div`
+interface BoxProps {
+  doesButtonExist: boolean;
+}
+
+export const NavigationBox = styled.div<BoxProps>`
   height: 30px;
   display: flex;
-  justify-content: space-between;
+  justify-content: ${(props) =>
+    props.doesButtonExist ? "space-between" : "flex-start"};
   align-items: center;
   padding: 15px 30px;
   background-color: #8fafd9;
