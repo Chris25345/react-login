@@ -28,7 +28,6 @@ export const InputBox = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   gap: 5px;
-  margin-bottom: 5px;
 `;
 
 export const Label = styled(BasicTypography)`
@@ -45,4 +44,10 @@ export const StyledInput = styled.input`
   border-radius: 3px;
   padding: 14px 24px;
   box-sizing: border-box;
+`;
+
+export const FormHelperText = styled(BasicTypography)`
+  font-weight: 600;
+  font-size: 14px;
+  color: #8fafd9;
 `;

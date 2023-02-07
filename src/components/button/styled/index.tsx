@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { ButtonProps } from "../button";
+import { IButtonProps } from "../types";
 
-export const ButtonContainer = styled.button<ButtonProps>`
+export const ButtonContainer = styled.button<IButtonProps>`
   max-width: ${(props) => (props.width ? `${props.width}px` : "fit-content")};
   width: 100%;
   heigth: ${(props) => (props.height ? `${props.height}px` : "15px")};

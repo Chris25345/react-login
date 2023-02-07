@@ -2,8 +2,11 @@ import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../../../components";
+import { APP_ROUTES, INITIAL_VALUES } from "../../../core/constants";
+import { loginSchema } from "../../../core/schemas";
 import { setFormData } from "../../../core/utils/local-storage";
 import {
+  FormHelperText,
   Header,
   InputBox,
   Label,
@@ -12,15 +15,20 @@ import {
   StyledInput,
 } from "../styled";
 import { ILoginFormData } from "../types";
+import { joiResolver } from "@hookform/resolvers/joi";
 
 export const Form: FC = () => {
   const [disabled, setDisabled] = useState<boolean>(false);
   const navigate = useNavigate();
-  const { register, handleSubmit } = useForm<ILoginFormData>({
-    defaultValues: {
-      email: "",
-      password: "",
-    },
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ILoginFormData>({
+    defaultValues: INITIAL_VALUES,
+    mode: "onBlur",
+    resolver: joiResolver(loginSchema),
   });
 
   const onSubmit = (data: ILoginFormData) => {
@@ -29,7 +37,7 @@ export const Form: FC = () => {
 
     setTimeout(() => {
       setDisabled(false);
-      navigate("/account");
+      navigate(APP_ROUTES.account);
     }, 1000);
   };
 
@@ -46,6 +54,9 @@ export const Form: FC = () => {
             id="email"
             type="email"
           />
+          {errors.email?.message ? (
+            <FormHelperText>{errors.email?.message}</FormHelperText>
+          ) : null}
         </InputBox>
 
         <InputBox>
@@ -56,6 +67,9 @@ export const Form: FC = () => {
             id="password"
             type="password"
           />
+          {errors.password?.message ? (
+            <FormHelperText>{errors.password?.message}</FormHelperText>
+          ) : null}
         </InputBox>
 
         <Button

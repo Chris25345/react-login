@@ -1,14 +1,8 @@
-import { FC, PropsWithChildren, ButtonHTMLAttributes, memo } from "react";
+import { FC, PropsWithChildren, memo } from "react";
 import { ButtonContainer } from "./styled";
+import { IButtonProps } from "./types";
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  width?: number;
-  height?: number;
-  color?: string;
-  radius?: number;
-}
-
-export const Button: FC<PropsWithChildren<ButtonProps>> = memo(
+export const Button: FC<PropsWithChildren<IButtonProps>> = memo(
   ({ children, ...props }) => {
     return <ButtonContainer {...props}>{children}</ButtonContainer>;
   }

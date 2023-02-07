@@ -1,12 +1,9 @@
-import { FC, memo, PropsWithChildren, ReactNode } from "react";
+import { FC, memo, PropsWithChildren } from "react";
 import { Navigation } from "../navigation";
 import { Content, MainContainer } from "./styled";
+import { IContainerProps } from "./types";
 
-interface ContainerProps {
-  button?: ReactNode;
-}
-
-export const Container: FC<PropsWithChildren<ContainerProps>> = memo(
+export const Container: FC<PropsWithChildren<IContainerProps>> = memo(
   ({ children, button }) => {
     return (
       <MainContainer>

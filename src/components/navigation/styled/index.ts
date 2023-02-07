@@ -1,11 +1,8 @@
 import styled from "styled-components";
 import { BasicTypography } from "../../../core/styled";
+import { IBoxProps } from "../types";
 
-interface BoxProps {
-  doesButtonExist: boolean;
-}
-
-export const NavigationBox = styled.div<BoxProps>`
+export const NavigationBox = styled.div<IBoxProps>`
   height: 30px;
   display: flex;
   justify-content: ${(props) =>
