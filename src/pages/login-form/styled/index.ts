@@ -6,9 +6,16 @@ export const Header = styled(BasicTypography)`
   font-size: 20px;
 `;
 
-export const StyledForm = styled.form`
+export const StyledFormWrapper = styled.div`
   width: 100%;
-  height: fit-content;
+  display: flex;
+  justify-content: center;
+`;
+
+export const StyledForm = styled.form`
+  max-width: 350px;
+  width: 100%;
+  padding: 0 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,6 +23,7 @@ export const StyledForm = styled.form`
 `;
 
 export const InputBox = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -27,12 +35,10 @@ export const Label = styled(BasicTypography)`
   font-weight: 400;
   font-size: 14px;
   color: black;
-  margin: 0;
 `;
 
 export const StyledInput = styled.input`
-  max-width: 350px;
-  width: 350px;
+  width: 100%;
   height: 48px;
 
   border: 1px solid #bababa;

@@ -12,6 +12,6 @@ export const Content = styled.div`
   height: 100%;
   background-color: #ebeef2;
   display: flex;
-  padding-top: 60px;
+  padding-top: 70px;
   justify-content: center;
 `;

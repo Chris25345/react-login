@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { ButtonProps } from "../button";
 
 export const ButtonContainer = styled.button<ButtonProps>`
-  min-width: ${(props) => (props.width ? `${props.width}px` : "fit-content")};
-  width: fit-content;
+  max-width: ${(props) => (props.width ? `${props.width}px` : "fit-content")};
+  width: 100%;
   heigth: ${(props) => (props.height ? `${props.height}px` : "15px")};
   background-color: ${(props) => (props.color ? `${props.color}` : "#c2d7f2")};
   padding: 10px 15px;

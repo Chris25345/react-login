@@ -8,7 +8,7 @@ interface NavigationProps {
 export const Navigation: FC<NavigationProps> = memo(({ button }) => {
   return (
     <NavigationBox doesButtonExist={!!button}>
-      <Typography>Cat Image Generator</Typography>
+      <Typography>My Awesome App</Typography>
       {button}
     </NavigationBox>
   );
