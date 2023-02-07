@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { BasicTypography } from "../../../core/styled";
 
 export const NavigationBox = styled.div`
   height: 30px;
@@ -9,7 +10,7 @@ export const NavigationBox = styled.div`
   background-color: #8fafd9;
 `;
 
-export const Typography = styled.h2`
+export const Typography = styled(BasicTypography)`
   color: white;
   font-weight: 400;
 `;
